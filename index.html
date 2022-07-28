@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Geolocation and Threat Detection</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <script src="js/main.js" defer></script>
+    
+    <!-- añado estilos para dar borde según si el patrón se cumple o no -->
+    <style>
+        input[pattern]:invalid  {
+            border: 2px solid red;
+        }
+        input[pattern]:valid{
+            border: 2px solid rgb(9, 145, 145);
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        
+        <h1>Obtén información de una IP</h1>
+
+        <form id="formulario">
+            <label>
+                IP del usuario
+                <!-- pattern para IP correcta-->
+                <input id="input" type="text" placeholder="Introduce aquí la IP" required pattern="^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$" >
+                <small>Ejemplo: 54.85.132.205</small>
+                <button type="submit" id="submit">Buscar información de esta IP</button>
+            </label>
+        </form>
+
+        <div>
+            <pre id="resultado"></pre>
+        </div>
+        
+    </main>
+  </body>
+</html>
